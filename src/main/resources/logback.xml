@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%-5level %d{HH:mm:ss.SSS} [%thread - %X{deviceName}] %logger{36}.%M:%L - %msg%n</pattern><!-- <pattern>%d{HH:mm:ss.SSS} 
+				[%thread] %-5level %logger{36}.%method %X{deviceName} - %msg%n</pattern> --><!--<Pattern>%X{deviceName} 
+				- %m%n</Pattern> -->
+		</layout>
+	</appender>
+
+
+	<appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+		<discriminator>
+			<Key>deviceName</Key>
+			<DefaultValue>UNKNOWN_DEVICE_NAME</DefaultValue>
+		</discriminator>
+		<sift>
+			<appender name="FILE-${deviceName}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+				<file>C:/tmp/${deviceName}.log</file>
+				<Append>true</Append>
+				<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+					<fileNamePattern>C:/tmp/${deviceName}%i.log</fileNamePattern>
+					<minIndex>1</minIndex>
+					<maxIndex>3</maxIndex>
+				</rollingPolicy>
+				<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+					<MaxFileSize>100MB</MaxFileSize>
+				</triggeringPolicy>
+				<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+					<layout class="ch.qos.logback.classic.PatternLayout">
+						<pattern>%-5level %d{HH:mm:ss.SSS} [%thread - %X{deviceName}] %logger{36}.%M:%L - %msg%n</pattern>
+					</layout>
+				</encoder>
+			</appender>
+		</sift>
+	</appender>
+
+	<logger name="jacorb" level="ERROR" />
+	<logger name="org.tango" level="DEBUG" />
+
+	<root level="ERROR">
+	 	<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="SIFT" />
+	</root>
+</configuration>
