@@ -4144,7 +4144,7 @@ public class DevTest {
      */
     public void setLongspecattrw(final int[] longspecattrw) {
 	xlogger.entry();
-	this.longspecattrw = longspecattrw;
+	this.longspecattrw = Arrays.copyOf(longspecattrw, longspecattrw.length);
 	xlogger.exit();
     }
 
