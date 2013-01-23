@@ -10,6 +10,9 @@
 	<groupId>org.tango.server</groupId>
 	<artifactId>TestDevice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
+	<name>TestDevice</name>
+	<description>device for tango tests</description>
 
 	<scm>
 		<connection>${scm.connection.svn.tango-cs}:api/java/server/TestDevice/trunk
