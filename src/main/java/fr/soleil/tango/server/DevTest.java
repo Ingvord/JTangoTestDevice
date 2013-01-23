@@ -3931,7 +3931,7 @@ public class DevTest {
      */
     public void setBooleanspecattrw(final boolean[] booleanspecattrw) {
 	xlogger.entry();
-	this.booleanspecattrw = booleanspecattrw;
+	this.booleanspecattrw = Arrays.copyOf(booleanspecattrw, booleanspecattrw.length);
 	xlogger.exit();
     }
 
@@ -3958,7 +3958,7 @@ public class DevTest {
      */
     public void setDoublespecattrw(final double[] doublespecattrw) {
 	xlogger.entry();
-	this.doublespecattrw = doublespecattrw;
+	this.doublespecattrw = Arrays.copyOf(doublespecattrw, doublespecattrw.length);
 	xlogger.exit();
     }
 
@@ -4045,7 +4045,7 @@ public class DevTest {
      */
     public void setFloatimaattrw(final float[][] floatimaattrw) {
 	xlogger.entry();
-	this.floatimaattrw = floatimaattrw;
+	this.floatimaattrw = Arrays.copyOf(floatimaattrw, floatimaattrw.length);
 	xlogger.exit();
     }
 
@@ -4069,7 +4069,7 @@ public class DevTest {
      */
     public void setFloatspecattrw(final float[] floatspecattrw) {
 	xlogger.entry();
-	this.floatspecattrw = floatspecattrw;
+	this.floatspecattrw = Arrays.copyOf(floatspecattrw, floatspecattrw.length);
 	xlogger.exit();
     }
 
@@ -4129,7 +4129,7 @@ public class DevTest {
      */
     public void setLongspecattrrw(final int[] longspecattrrw) {
 	xlogger.entry();
-	this.longspecattrrw = longspecattrrw;
+	this.longspecattrrw = Arrays.copyOf(longspecattrrw, longspecattrrw.length);
 	/* PROTECTED REGION ID(DevTest.setLong_spec_attr_rw) ENABLED START */
 	// put write attribute code here
 	/* PROTECTED REGION END */
@@ -4242,7 +4242,7 @@ public class DevTest {
      */
     public void setShortimaattrw(final short[][] shortimaattrw) {
 	xlogger.entry();
-	this.shortimaattrw = shortimaattrw;
+	this.shortimaattrw = Arrays.copyOf(shortimaattrw, shortimaattrw.length);
 	xlogger.exit();
     }
 
@@ -4266,8 +4266,7 @@ public class DevTest {
      */
     public void setShortspecattrw(final short[] shortspecattrw) {
 	xlogger.entry();
-	System.out.println("set " + Arrays.toString(shortspecattrw));
-	this.shortspecattrw = shortspecattrw;
+	this.shortspecattrw = Arrays.copyOf(shortspecattrw, shortspecattrw.length);
 	xlogger.exit();
     }
 
@@ -4377,7 +4376,7 @@ public class DevTest {
      */
     public void setStringspecattrrw(final String[] stringspecattrrw) {
 	xlogger.entry();
-	this.stringspecattrrw = stringspecattrrw;
+	this.stringspecattrrw = Arrays.copyOf(stringspecattrrw, stringspecattrrw.length);
 	xlogger.exit();
     }
 
@@ -4389,7 +4388,7 @@ public class DevTest {
      */
     public void setStringspecattrw(final String[] stringspecattrw) {
 	xlogger.entry();
-	this.stringspecattrw = stringspecattrw;
+	this.stringspecattrw = Arrays.copyOf(stringspecattrw, stringspecattrw.length);
 	xlogger.exit();
     }
 
@@ -4425,7 +4424,7 @@ public class DevTest {
      */
     public void setUCharspecattrw(final byte[] uCharspecattrw) {
 	xlogger.entry();
-	this.uCharspecattrw = uCharspecattrw;
+	this.uCharspecattrw = Arrays.copyOf(uCharspecattrw, uCharspecattrw.length);
 	xlogger.exit();
     }
 
