@@ -1,5 +1,7 @@
 package fr.soleil.tango.server.attribute;
 
+import java.util.Arrays;
+
 import org.tango.server.StateMachineBehavior;
 import org.tango.server.attribute.AttributeConfiguration;
 import org.tango.server.attribute.AttributeValue;
@@ -51,7 +53,7 @@ public class PollbuffRW implements IAttributeBehavior, ISetValueUpdater {
     }
 
     public void setPollbuffRWRead(final String[] pollbuffRWRead, final int dimX, final int dimY) {
-	this.pollbuffRWRead = pollbuffRWRead;
+	this.pollbuffRWRead = Arrays.copyOf(pollbuffRWRead, pollbuffRWRead.length);
 	this.dimX = dimX;
 	this.dimY = dimY;
     }
@@ -61,7 +63,7 @@ public class PollbuffRW implements IAttributeBehavior, ISetValueUpdater {
     }
 
     public void setPollbuffRWWrite(final String[] pollbuffRWWrite, final int dimX, final int dimY) {
-	this.pollbuffRWWrite = pollbuffRWWrite;
+	this.pollbuffRWWrite = Arrays.copyOf(pollbuffRWWrite, pollbuffRWWrite.length);
 	dimXW = dimX;
 	dimYW = dimY;
     }
