@@ -47,10 +47,6 @@
 			<artifactId>JTangoServer</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>org.tango</groupId>
-			<artifactId>JTangoServerLang</artifactId>
-		</dependency>
 	</dependencies>
 
 </project>
